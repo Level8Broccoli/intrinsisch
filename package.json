@@ -2,8 +2,15 @@
   "name": "intrinsisch",
   "version": "1.0.0",
   "private": true,
-  "repository": "git@gitlab.com:level8broccoli/intrinsisch.git",
+  "scripts": {
+    "format": "prettier --write './**/*.scss'",
+    "lint": "stylelint ./**/*.scss"
+  },
   "devDependencies": {
-    "sass": "^1.75.0"
+    "prettier": "^3.2.5",
+    "sass": "^1.75.0",
+    "stylelint": "^16.4.0",
+    "stylelint-config-recommended-scss": "^14.0.0",
+    "stylelint-config-standard": "^36.0.0"
   }
 }
