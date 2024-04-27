@@ -1,0 +1,9 @@
+{
+  "name": "intrinsisch",
+  "version": "1.0.0",
+  "private": true,
+  "repository": "git@gitlab.com:level8broccoli/intrinsisch.git",
+  "devDependencies": {
+    "sass": "^1.75.0"
+  }
+}
