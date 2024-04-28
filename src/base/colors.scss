@@ -62,4 +62,21 @@ $colors: (
   [data-theme="dark"] {
     color-scheme: only dark;
   }
+
+  @each $color, $_ in $colors {
+    [data-palette="#{$color}"] {
+      --clr-01-app-background: var(--clr-#{$color}-01);
+      --clr-02-subtle-background: var(--clr-#{$color}-02);
+      --clr-03-ui-element-background: var(--clr-#{$color}-03);
+      --clr-04-ui-element-background-hover: var(--clr-#{$color}-04);
+      --clr-05-ui-element-background-active: var(--clr-#{$color}-05);
+      --clr-06-subtle-border: var(--clr-#{$color}-06);
+      --clr-07-ui-element-border: var(--clr-#{$color}-07);
+      --clr-08-ui-element-border-hover: var(--clr-#{$color}-08);
+      --clr-09-solid-background: var(--clr-#{$color}-09);
+      --clr-10-solid-background-hover: var(--clr-#{$color}-10);
+      --clr-11-text-low-contrast: var(--clr-#{$color}-11);
+      --clr-12-text-high-contrast: var(--clr-#{$color}-12);
+    }
+  }
 }
