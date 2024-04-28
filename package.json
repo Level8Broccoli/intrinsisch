@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "sass ./sass/index.scss"
+    "build": "sass ./sass/index.scss",
+    "lint": "stylelint --fix ./sass/**/*.scss"
   },
   "devDependencies": {
-    "sass": "^1.75.0"
+    "sass": "^1.75.0",
+    "stylelint": "^16.4.0",
+    "stylelint-config-standard-scss": "^13.1.0"
   }
 }
