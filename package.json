@@ -4,8 +4,10 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "format": "prettier --write ./src/**/*.scss",
-    "lint": "stylelint --fix ./src/**/*.scss",
+    "fix": "bun fix:format && bun fix:lint",
+    "fix:format": "prettier --write ./src/**/*.scss",
+    "fix:lint": "stylelint --fix ./src/**/*.scss",
+    "test": "bun test:format && bun test:lint",
     "test:format": "prettier --check ./src/**/*.scss",
     "test:lint": "stylelint ./src/**/*.scss",
     "test:compile": "sass --no-source-map ./src/index.scss"
