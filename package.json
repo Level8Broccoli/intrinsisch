@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "sass --no-source-map ./sass/index.scss ./dist/intrinsisch.css",
-    "format": "prettier --write ./sass/**/*.scss",
-    "lint": "stylelint --fix ./sass/**/*.scss"
+    "build": "sass --no-source-map ./src/index.scss ./dist/intrinsisch.css",
+    "format": "prettier --write ./src/**/*.scss",
+    "lint": "stylelint --fix ./src/**/*.scss",
+    "test": "pnpm /^test:.*/",
+    "test:format": "prettier --check ./src/**/*.scss",
+    "test:lint": "stylelint ./src/**/*.scss"
   },
   "devDependencies": {
     "prettier": "^3.2.5",
