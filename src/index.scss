@@ -1,0 +1,8 @@
+@use "./partial";
+
+    $some-Variabl: green;
+
+.class {
+  color: red;
+  background-color: partial.$sss;
+}
