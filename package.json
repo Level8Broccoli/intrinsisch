@@ -5,10 +5,10 @@
   "private": true,
   "scripts": {
     "fix": "bun fix:format && bun fix:lint",
-    "fix:format": "prettier --write ./src/**/*.scss",
+    "fix:format": "prettier --write .",
     "fix:lint": "stylelint --fix ./src/**/*.scss",
     "test": "bun test:format && bun test:lint",
-    "test:format": "prettier --check ./src/**/*.scss",
+    "test:format": "prettier --check .",
     "test:lint": "stylelint ./src/**/*.scss",
     "test:compile": "sass --no-source-map ./src/index.scss",
     "build:docs": "bun run docs/index.ts"

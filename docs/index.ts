@@ -1,7 +1,6 @@
-import { toSSG } from 'hono/bun';
+import { toSSG } from "hono/bun";
 import app from "./docs";
 
 toSSG(app, {
-  dir: "generated"
+  dir: "generated",
 });
-

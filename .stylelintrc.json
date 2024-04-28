@@ -1,6 +1,9 @@
 {
   "extends": ["stylelint-config-standard-scss"],
   "rules": {
-    "rule-empty-line-before": ["always", {"except": ["after-single-line-comment", "first-nested"]}]
+    "rule-empty-line-before": [
+      "always",
+      { "except": ["after-single-line-comment", "first-nested"] }
+    ]
   }
 }
