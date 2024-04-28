@@ -1,8 +1,1 @@
-@use "./partial";
-
-$some-variabl: green;
-
-.class {
-  color: red;
-  background-color: partial.$sss;
-}
+@forward "./base/colors.scss";

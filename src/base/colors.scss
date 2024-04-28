@@ -1,0 +1,65 @@
+@use "sass:map";
+
+$colors: (
+  "default": (
+    "light": (
+      "01": #fcfcfd,
+      "02": #f9f9fb,
+      "03": #f0f0f3,
+      "04": #e8e8ec,
+      "05": #e0e1e6,
+      "06": #d9d9e0,
+      "07": #cdced6,
+      "08": #b9bbc6,
+      "09": #8b8d98,
+      "10": #80838d,
+      "11": #60646c,
+      "12": #1c2024,
+    ),
+    "dark": (
+      "01": #111113,
+      "02": #18191b,
+      "03": #212225,
+      "04": #272a2d,
+      "05": #2e3135,
+      "06": #363a3f,
+      "07": #43484e,
+      "08": #5a6169,
+      "09": #696e77,
+      "10": #777b84,
+      "11": #b0b4ba,
+      "12": #edeef0,
+    ),
+  ),
+);
+
+@mixin styles {
+  :root {
+    @each $color, $values in $colors {
+      $light: map.get($values, "light");
+      $dark: map.get($values, "dark");
+
+      @each $i, $_ in $light {
+        --clr-#{$color}-#{$i}: light-dark(
+          #{map.get($light, $i)},
+          #{map.get($dark, $i)}
+        );
+      }
+    }
+  }
+
+  /* Basic dark mode support */
+  body {
+    color-scheme: light dark;
+    background-color: Canvas;
+    color: CanvasText;
+  }
+
+  [data-theme="light"] {
+    color-scheme: only light;
+  }
+
+  [data-theme="dark"] {
+    color-scheme: only dark;
+  }
+}
