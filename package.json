@@ -10,7 +10,8 @@
     "test": "bun test:format && bun test:lint",
     "test:format": "prettier --check ./src/**/*.scss",
     "test:lint": "stylelint ./src/**/*.scss",
-    "test:compile": "sass --no-source-map ./src/index.scss"
+    "test:compile": "sass --no-source-map ./src/index.scss",
+    "build:docs": "bun run docs/index.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",
@@ -21,5 +22,8 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "hono": "^4.2.8"
   }
 }
