@@ -1,7 +1,12 @@
-import { $ } from "bun";
-import { expect, test } from "bun:test";
+import { assertEquals } from "@std/assert";
 
-test("project does not emit css", async () => {
-  const css = await $`bun run test:compile`.text();
-  expect(css).toBe("");
+Deno.test("project does not emit css", async () => {
+  const command = new Deno.Command(Deno.execPath(), {
+    args: ["task", "test:compile"],
+  });
+
+  const { stdout } = await command.output();
+  const css = new TextDecoder().decode(stdout);
+
+  assertEquals(css, "");
 });

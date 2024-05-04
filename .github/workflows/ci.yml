@@ -11,11 +11,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v1
-        with:
-          bun-version: 1.1.4
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      - run: bun install
-      - run: bun run test
-      - run: bun test
+      - name: Setup environment
+        uses: cachix/install-nix-action@v25
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Start development shell
+        uses: nicknovitski/nix-develop@v1
+
+      - name: Check formatting
+        run: just check
+
+      - name: Run linter
+        run: just lint
+
+      - name: Run tests
+        run: just test

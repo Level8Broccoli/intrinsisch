@@ -7,9 +7,13 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      devShell = pkgs.mkShell {
+      devShells.default = pkgs.mkShell {
         buildInputs = with pkgs; [
-          bun
+          just
+          deno
+          dart-sass
+          nodePackages.prettier
+          stylelint
         ];
       };
     }
